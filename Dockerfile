@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 RUN apt update && apt install -y \
     docker.io \
     git \
+    jq \
     maven \
     net-tools \
     openjdk-8-jdk \
