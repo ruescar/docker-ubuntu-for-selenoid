@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ENV PATH=$PATH:/usr/local/go/bin
+
 RUN apt update && apt install -y \
     docker.io \
     git \
@@ -11,7 +13,10 @@ RUN apt update && apt install -y \
     uuid-runtime \
     wget \
     && rm /usr/bin/java && ln -s /usr/lib/jvm/java-8-openjdk-amd64/bin/java /usr/bin/java \
-    && rm /usr/bin/javac && ln -s /usr/lib/jvm/java-8-openjdk-amd64/bin/javac /usr/bin/javac
+    && rm /usr/bin/javac && ln -s /usr/lib/jvm/java-8-openjdk-amd64/bin/javac /usr/bin/javac \
+    && wget https://golang.org/dl/go1.15.linux-amd64.tar.gz \
+    && tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz \
+    && rm go1.15.linux-amd64.tar.gz
 
 CMD ["/bin/bash"]
 

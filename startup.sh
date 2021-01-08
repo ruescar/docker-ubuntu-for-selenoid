@@ -11,5 +11,5 @@ docker run \
   -v /tmp:/tmp:rw \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v ~/.m2:/root/.m2/ \
-  -w /workspace/selenoid-images/selenium \
+  -w /workspace/selenoid-images \
   ubuntu-for-selenoid
